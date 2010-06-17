@@ -6,7 +6,6 @@ import liquibase.change.ChangeWithColumns;
 import liquibase.change.ColumnConfig;
 import liquibase.database.Database;
 import liquibase.statement.SqlStatement;
-import liquibase.statement.core.ModifyColumnsStatement;
 import liquibase.util.StringUtils;
 
 import java.util.ArrayList;
@@ -57,7 +56,7 @@ public class ModifyColumnChange extends AbstractChange implements ChangeWithColu
     public SqlStatement[] generateStatements(Database database) {
 
         return new SqlStatement[] {
-            new ModifyColumnsStatement(getSchemaName(), getTableName(), getColumns().toArray(new ColumnConfig[getColumns().size()]))
+            new ModifyColumnStatement(getSchemaName(), getTableName(), getColumns().toArray(new ColumnConfig[getColumns().size()]))
         };
     }
 

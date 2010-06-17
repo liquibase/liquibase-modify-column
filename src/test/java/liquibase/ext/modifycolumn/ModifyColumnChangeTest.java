@@ -3,14 +3,10 @@ package liquibase.ext.modifycolumn;
 
 import liquibase.change.ColumnConfig;
 import liquibase.change.core.*;
-import liquibase.change.core.ModifyColumnChange;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Tests for {@link liquibase.change.core.ModifyColumnChange}
- */
 public abstract class ModifyColumnChangeTest { //extends AbstractChangeTest {
 
 //    liquibase.change.core.ModifyColumnChange change;

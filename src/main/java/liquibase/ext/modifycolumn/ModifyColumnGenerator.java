@@ -5,25 +5,33 @@ import liquibase.database.Database;
 import liquibase.database.typeconversion.TypeConverterFactory;
 import liquibase.database.core.*;
 import liquibase.exception.ValidationErrors;
+import liquibase.exception.Warnings;
 import liquibase.sql.Sql;
 import liquibase.sql.UnparsedSql;
 import liquibase.sqlgenerator.SqlGenerator;
 import liquibase.sqlgenerator.SqlGeneratorChain;
-import liquibase.statement.core.ModifyColumnsStatement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnsStatement> {
+public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement> {
     public int getPriority() {
         return 5;
     }
 
-    public boolean supports(ModifyColumnsStatement statement, Database database) {
+    public boolean supports(ModifyColumnStatement statement, Database database) {
         return true;
     }
 
-    public ValidationErrors validate(ModifyColumnsStatement statement, Database database, SqlGeneratorChain sqlGeneratorChain) {
+    public boolean requiresUpdatedDatabaseMetadata(Database database) {
+        return false;
+    }
+
+    public Warnings warn(ModifyColumnStatement modifyColumnStatement, Database database, SqlGeneratorChain sqlGeneratorChain) {
+        return new Warnings();
+    }
+
+    public ValidationErrors validate(ModifyColumnStatement statement, Database database, SqlGeneratorChain sqlGeneratorChain) {
         ValidationErrors validationErrors = new ValidationErrors();
         validationErrors.checkRequiredField("tableName", statement.getTableName());
         validationErrors.checkRequiredField("columns", statement.getColumns());
@@ -41,7 +49,7 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnsStatemen
         return validationErrors;
     }
 
-    public Sql[] generateSql(ModifyColumnsStatement statement, Database database, SqlGeneratorChain sqlGeneratorChain) {
+    public Sql[] generateSql(ModifyColumnStatement statement, Database database, SqlGeneratorChain sqlGeneratorChain) {
         if (database instanceof SQLiteDatabase) {
             // return special statements for SQLite databases
             return generateStatementsForSQLiteDatabase(statement, database);
@@ -91,7 +99,7 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnsStatemen
 
     }
 
-    private Sql[] generateStatementsForSQLiteDatabase(final ModifyColumnsStatement statement, Database database) {
+    private Sql[] generateStatementsForSQLiteDatabase(final ModifyColumnStatement statement, Database database) {
 
 		// SQLite does not support this ALTER TABLE operation until now.
 		// For more information see: http://www.sqlite.org/omitted.html.
