@@ -26,8 +26,8 @@
     </issueManagement>
 
     <scm>
-        <url>https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</url>
-        <developerConnection>scm:svn:https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</developerConnection>
+        <url>https://liquibase.jira.com/svn/CONTRIB/trunk/modify-column/trunk</url>
+        <developerConnection>scm:svn:https://liquibase.jira.com/svn/CONTRIB/trunk/modify-column/trunk</developerConnection>
     </scm>
 
     <developers>
