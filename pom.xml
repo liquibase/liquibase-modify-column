@@ -21,9 +21,14 @@
     </licenses>
 
     <issueManagement>
-        <url>http://liquibase.jira.com/browse/CORE</url>
+        <url>http://liquibase.jira.com/browse/CONTRIB</url>
     </issueManagement>
 
+    <scm>
+        <url>https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</url>
+        <developerConnection>scm:svn:https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</developerConnection>
+    </scm>
+    
     <developers>
        <developer>
          <id>nvoxland</id>
