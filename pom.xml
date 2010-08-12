@@ -12,6 +12,11 @@
         <version>2.0-rc5</version>
     </parent>
 
+    <scm>
+        <url>https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</url>
+        <developerConnection>scm:svn:https://liquibase.jira.com/svn/CONTRIB/modify-column/trunk</developerConnection>
+    </scm>
+    
     <dependencies>
         <dependency>
             <groupId>org.liquibase</groupId>
@@ -72,11 +77,4 @@
             </build>
         </profile>
     </profiles>
-
-
-
-  <scm>
-    <developerConnection>scm:svn:https://liquibase.jira.com/svn/CORE/tags/modify-column-2.0-rc5</developerConnection>
-    <url>https://liquibase.jira.com/svn/CORE/tags/modify-column-2.0-rc5</url>
-  </scm>
 </project>
