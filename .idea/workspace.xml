@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="f88c56fe-52ac-4f55-b644-c040fedbd1a8" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java-test\liquibase" afterPath="$PROJECT_DIR$/src/test/java/liquibase" />
+    <list default="true" readonly="true" id="f88c56fe-52ac-4f55-b644-c040fedbd1a8" name="Default" comment="trying to release">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modify-column.iml" afterPath="$PROJECT_DIR$/modify-column.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java-test\liquibase\ext" afterPath="$PROJECT_DIR$/src/test/java/liquibase/ext" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java" afterPath="$PROJECT_DIR$/src/main/java" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase\ext" afterPath="$PROJECT_DIR$/src/main/java/liquibase/ext" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java-test\liquibase\ext\modifycolumn\ModifyColumnChangeTest.java" afterPath="$PROJECT_DIR$/src/test/java/liquibase/ext/modifycolumn/ModifyColumnChangeTest.java" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase\ext\modifycolumn\ModifyColumnStatement.java" afterPath="$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnStatement.java" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java-test\liquibase\ext\modifycolumn" afterPath="$PROJECT_DIR$/src/test/java/liquibase/ext/modifycolumn" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase" afterPath="$PROJECT_DIR$/src/main/java/liquibase" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java-test" afterPath="$PROJECT_DIR$/src/test/java" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase\ext\modifycolumn" afterPath="$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase\ext\modifycolumn\ModifyColumnGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test" />
-      <change type="MOVED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\src\java\liquibase\ext\modifycolumn\ModifyColumnChange.java" afterPath="$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\othersvn\liquibase-contrib\modify-column\trunk\.idea\libraries\Maven__org_liquibase_liquibase_2_0_rc2_SNAPSHOT.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_2_0_rc2_SNAPSHOT.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="modify-column.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,7 +71,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="51" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.75">
+            <state line="54" column="28" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.89522344">
               <folding />
             </state>
           </provider>
@@ -88,10 +80,8 @@
       <file leaf-file-name="ModifyColumnChange.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnChange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="28" selection-start="1479" selection-end="1479" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="24" column="77" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,9 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="30" column="30" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,9 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/liquibase/ext/modifycolumn/ModifyColumnChangeTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,6 +159,12 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </treeState>
   </component>
   <component name="ModuleEditorState">
@@ -210,29 +202,19 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modify-column" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modify-column" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,14 +226,15 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="MavenSettings" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -395,6 +378,7 @@
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
     <option name="DETECT_NESTED_COPIES" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <configuration useDefault="true">C:\Users\nvoxland\AppData\Roaming\Subversion</configuration>
@@ -421,36 +405,37 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="f88c56fe-52ac-4f55-b644-c040fedbd1a8" name="Default" comment="" />
       <created>1276799617243</created>
       <updated>1276799617243</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1696" height="1066" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930845" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294621" sideWeight="0.6630077" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2600107" sideWeight="0.6640471" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6630077" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1895355" sideWeight="0.6640471" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32907662" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -526,34 +511,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnChange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="28" selection-start="1479" selection-end="1479" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="24" column="77" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/liquibase/ext/modifycolumn/ModifyColumnGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="30" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="30" column="30" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/liquibase/ext/modifycolumn/ModifyColumnChangeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="9" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="51" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.75">
+        <state line="54" column="28" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.89522344">
           <folding />
         </state>
       </provider>
