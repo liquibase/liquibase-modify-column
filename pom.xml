@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.liquibase.ext</groupId>
-    <artifactId>modify-column</artifactId>
+    <artifactId>liquibase-modify-column</artifactId>
     <name>modifyColumn change from Liquibase 1.9</name>
     <version>2.0.1-SNAPSHOT</version>
     <description>Prior to Liquibase 2.0, there was a modifyColumn change that was difficult to maintain because it was too broad. It has been moved to this separate library, but use of it is not recommended</description>
@@ -21,19 +21,19 @@
     </licenses>
 
     <issueManagement>
-        <url>http://liquibase.jira.com/browse/CONTRIB</url>
+		<url>https://github.com/liquibase/liquibase-modify-column/issues</url>
     </issueManagement>
 
     <scm>
-        <url>https://liquibase.jira.com/svn/CONTRIB/trunk/modify-column/trunk</url>
-        <developerConnection>scm:svn:https://liquibase.jira.com/svn/CONTRIB/trunk/modify-column/trunk</developerConnection>
+		<connection>scm:git:http://github.com/liquibase/liquibase-modify-column.git</connection>
+		<url>https://github.com/liquibase/liquibase-modify-column</url>
     </scm>
 
     <developers>
         <developer>
             <id>nvoxland</id>
             <name>Nathan Voxland</name>
-            <email>nathan@voxland.net</email>
+			<email>nathan.voxland@liquibase.org</email>
             <url>http://nathan.voxland.net</url>
             <organizationUrl>http://nathan.voxland.net/</organizationUrl>
             <roles>
@@ -48,14 +48,14 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>2.0.0</version>
+			<version>3.0.6</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-            <version>4.7</version>
+			<version>4.11</version>
         </dependency>
         <dependency>
             <groupId>org.easymock</groupId>
@@ -71,37 +71,58 @@
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
+                        <source>1.6</source>
+                        <target>1.6</target>
                         <optimize>true</optimize>
                         <debug>true</debug>
+                        <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
 
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.0</version>
-                    <configuration>
-                        <mavenExecutorId>forked-path</mavenExecutorId>
-                    </configuration>
-                </plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+                    <version>2.2.2</version>
+					<configuration>
+                        <stagingRepository>/tmp/maven-snapshot</stagingRepository>
+						<mavenExecutorId>forked-path</mavenExecutorId>
+                        <pushChanges>false</pushChanges>
+					</configuration>
+				</plugin>
+
+                <plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>enforce-java</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>enforce</goal>
+							</goals>
+							<configuration>
+								<rules>
+									<requireJavaVersion>
+										<version>1.6</version>
+									</requireJavaVersion>
+								</rules>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
             </plugins>
         </pluginManagement>
     </build>
 
     <distributionManagement>
         <repository>
-            <uniqueVersion>false</uniqueVersion>
             <id>sonatype-nexus-staging</id>
-            <name>Sonatype Production Repository</name>
+            <name>Nexus Release Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-
         </repository>
         <snapshotRepository>
-            <uniqueVersion>false</uniqueVersion>
             <id>sonatype-nexus-snapshots</id>
-            <name>Sontatype Snapshot Repository</name>
+            <name>Sonatype Nexus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>

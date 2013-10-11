@@ -2,31 +2,23 @@ package liquibase.ext.modifycolumn;
 
 import liquibase.change.ColumnConfig;
 import liquibase.database.Database;
-import liquibase.database.typeconversion.TypeConverterFactory;
 import liquibase.database.core.*;
+import liquibase.datatype.DataTypeFactory;
 import liquibase.exception.ValidationErrors;
 import liquibase.exception.Warnings;
 import liquibase.sql.Sql;
 import liquibase.sql.UnparsedSql;
 import liquibase.sqlgenerator.SqlGenerator;
 import liquibase.sqlgenerator.SqlGeneratorChain;
+import liquibase.sqlgenerator.core.AbstractSqlGenerator;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement> {
-    public int getPriority() {
-        return 5;
-    }
+public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStatement> {
 
-    public boolean supports(ModifyColumnStatement statement, Database database) {
-        return true;
-    }
-
-    public boolean requiresUpdatedDatabaseMetadata(Database database) {
-        return false;
-    }
-
+    @Override
     public Warnings warn(ModifyColumnStatement modifyColumnStatement, Database database, SqlGeneratorChain sqlGeneratorChain) {
         return new Warnings();
     }
@@ -37,12 +29,12 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement
         validationErrors.checkRequiredField("columns", statement.getColumns());
 
         for (ColumnConfig column : statement.getColumns()) {
-            if (column.isPrimaryKey() && (database instanceof CacheDatabase
+            if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() && (database instanceof CacheDatabase
                     || database instanceof H2Database
                     || database instanceof DB2Database
                     || database instanceof DerbyDatabase
                     || database instanceof SQLiteDatabase)) {
-                validationErrors.addError("Adding primary key columns is not supported on "+database.getTypeName());
+                validationErrors.addError("Adding primary key columns is not supported on "+database.getShortName());
             }
         }
 
@@ -57,21 +49,21 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement
 
         List<Sql> sql = new ArrayList<Sql>();
         for (ColumnConfig column : statement.getColumns()) {
-            String alterTable = "ALTER TABLE " + database.escapeTableName(statement.getSchemaName(), statement.getTableName());
+            String alterTable = "ALTER TABLE " + database.escapeTableName(null, statement.getSchemaName(), statement.getTableName());
 
             // add "MODIFY"
             alterTable += " " + getModifyString(database) + " ";
 
             // add column name
-            alterTable += database.escapeColumnName(statement.getSchemaName(), statement.getTableName(), column.getName());
+            alterTable += database.escapeColumnName(null, statement.getSchemaName(), statement.getTableName(), column.getName());
 
             alterTable += getPreDataTypeString(database); // adds a space if nothing else
 
             // add column type
-            alterTable += TypeConverterFactory.getInstance().findTypeConverter(database).getDataType(column.getType(), false);
+            alterTable += DataTypeFactory.getInstance().fromDescription(column.getType()).toDatabaseDataType(database);
 
             if (supportsExtraMetaData(database)) {
-                if (!column.isNullable()) {
+                if (column.getConstraints() != null && !column.getConstraints().isNullable()) {
                     alterTable += " NOT NULL";
                 } else {
                     if (database instanceof SybaseDatabase || database instanceof SybaseASADatabase) {
@@ -82,10 +74,10 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement
                 alterTable += getDefaultClause(column, database);
 
                 if (column.isAutoIncrement() != null && column.isAutoIncrement()) {
-                    alterTable += " " + database.getAutoIncrementClause();
+                    alterTable += " " + database.getAutoIncrementClause(BigInteger.ONE, BigInteger.ONE);
                 }
 
-                if (column.isPrimaryKey()) {
+                if (column.getConstraints() != null && column.getConstraints().isPrimaryKey()) {
                     alterTable += " PRIMARY KEY";
                 }
             }
@@ -223,7 +215,7 @@ public class ModifyColumnGenerator implements SqlGenerator<ModifyColumnStatement
         String defaultValue = column.getDefaultValue();
         if (defaultValue != null) {
             if (database instanceof MySQLDatabase) {
-                clause += " DEFAULT " + TypeConverterFactory.getInstance().findTypeConverter(database).getDataType(defaultValue).convertObjectToString(defaultValue, database);
+                clause += " DEFAULT " + DataTypeFactory.getInstance().fromObject(defaultValue, database).objectToSql(defaultValue, database);
             }
         }
         return clause;

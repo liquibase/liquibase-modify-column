@@ -1,9 +1,6 @@
 package liquibase.ext.modifycolumn;
 
-import liquibase.change.AbstractChange;
-import liquibase.change.ChangeMetaData;
-import liquibase.change.ChangeWithColumns;
-import liquibase.change.ColumnConfig;
+import liquibase.change.*;
 import liquibase.database.Database;
 import liquibase.statement.SqlStatement;
 import liquibase.util.StringUtils;
@@ -14,16 +11,12 @@ import java.util.List;
 /**
  * Modifies the data type of an existing column.
  */
+@DatabaseChange(name="modifyColumn", description = "Modify column definition", priority = ChangeMetaData.PRIORITY_DEFAULT, appliesTo = "column")
 public class ModifyColumnChange extends AbstractChange implements ChangeWithColumns {
 
     private String schemaName;
     private String tableName;
-    private List<ColumnConfig> columns;
-
-    public ModifyColumnChange() {
-        super("modifyColumn", "Modify Column", 5);
-        columns = new ArrayList<ColumnConfig>();
-    }
+    private List<ColumnConfig> columns = new ArrayList<ColumnConfig>();
 
     public String getSchemaName() {
         return schemaName;
@@ -47,6 +40,11 @@ public class ModifyColumnChange extends AbstractChange implements ChangeWithColu
 
     public void addColumn(ColumnConfig column) {
       	columns.add(column);
+    }
+
+    @Override
+    public void setColumns(List columns) {
+        this.columns = columns;
     }
 
     public void removeColumn(ColumnConfig column) {
