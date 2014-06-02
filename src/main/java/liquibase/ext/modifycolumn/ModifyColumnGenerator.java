@@ -29,8 +29,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
         validationErrors.checkRequiredField("columns", statement.getColumns());
 
         for (ColumnConfig column : statement.getColumns()) {
-            if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() && (database instanceof CacheDatabase
-                    || database instanceof H2Database
+            if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() && (database instanceof H2Database
                     || database instanceof DB2Database
                     || database instanceof DerbyDatabase
                     || database instanceof SQLiteDatabase)) {
@@ -60,7 +59,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
             alterTable += getPreDataTypeString(database); // adds a space if nothing else
 
             // add column type
-            alterTable += DataTypeFactory.getInstance().fromDescription(column.getType()).toDatabaseDataType(database);
+            alterTable += DataTypeFactory.getInstance().fromDescription(column.getType(), database).toDatabaseDataType(database);
 
             if (supportsExtraMetaData(database)) {
                 if (column.getConstraints() != null && !column.getConstraints().isNullable()) {
@@ -160,15 +159,13 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
                  || database  instanceof H2Database
                 || database instanceof DerbyDatabase
                 || database instanceof DB2Database
-                || database instanceof MSSQLDatabase
-                || database instanceof CacheDatabase) {
+                || database instanceof MSSQLDatabase) {
             return "ALTER COLUMN";
         } else if (database instanceof SybaseASADatabase
                 || database instanceof SybaseDatabase
                 || database instanceof MySQLDatabase) {
             return "MODIFY";
-        } else if (database instanceof OracleDatabase
-                || database instanceof MaxDBDatabase) {
+        } else if (database instanceof OracleDatabase) {
             return "MODIFY (";
         } else {
             return "ALTER COLUMN";
@@ -189,9 +186,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
                 || database instanceof MySQLDatabase
                 || database instanceof HsqlDatabase
                  || database  instanceof H2Database
-                || database instanceof CacheDatabase
-                || database instanceof OracleDatabase
-                || database instanceof MaxDBDatabase) {
+                || database instanceof OracleDatabase) {
             return " ";
         } else {
             return " TYPE ";
@@ -202,8 +197,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
      * @return the string that comes after the column type definition (like a close parentheses for Oracle)
      */
     private String getPostDataTypeString(Database database) {
-        if (database instanceof OracleDatabase
-                || database instanceof MaxDBDatabase) {
+        if (database instanceof OracleDatabase) {
             return " )";
         } else {
             return "";
