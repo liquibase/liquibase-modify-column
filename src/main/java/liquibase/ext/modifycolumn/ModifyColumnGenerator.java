@@ -29,7 +29,8 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
         validationErrors.checkRequiredField("columns", statement.getColumns());
 
         for (ColumnConfig column : statement.getColumns()) {
-            if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() && (database instanceof H2Database
+            if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() != null && column.getConstraints().isPrimaryKey() 
+            	   && (database instanceof H2Database
                     || database instanceof DB2Database
                     || database instanceof DerbyDatabase
                     || database instanceof SQLiteDatabase)) {
@@ -76,7 +77,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
                     alterTable += " " + database.getAutoIncrementClause(BigInteger.ONE, BigInteger.ONE);
                 }
 
-                if (column.getConstraints() != null && column.getConstraints().isPrimaryKey()) {
+                if (column.getConstraints() != null && column.getConstraints().isPrimaryKey() != null && column.getConstraints().isPrimaryKey()) {
                     alterTable += " PRIMARY KEY";
                 }
             }
