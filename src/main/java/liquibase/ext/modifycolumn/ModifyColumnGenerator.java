@@ -73,7 +73,7 @@ public class ModifyColumnGenerator extends AbstractSqlGenerator<ModifyColumnStat
                 alterTable += getDefaultClause(column, database);
 
                 if (column.isAutoIncrement() != null && column.isAutoIncrement()) {
-                    alterTable += " " + database.getAutoIncrementClause(BigInteger.ONE, BigInteger.ONE);
+                    alterTable += " " + database.getAutoIncrementClause(BigInteger.ONE, BigInteger.ONE, null, null);
                 }
 
                 if (column.getConstraints() != null && column.getConstraints().isPrimaryKey()) {

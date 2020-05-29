@@ -40,7 +40,7 @@ public class ModifyColumnChangeTest { //extends AbstractChangeTest {
     @Test
     public void generateStatement() throws Exception {
         OracleDatabase database = new OracleDatabase();
-        assertEquals("ALTER TABLE TABLE_NAME MODIFY ( NAME NUMBER(10) )", SqlGeneratorFactory.getInstance().generateSql(change.generateStatements(database)[0], database)[0].toSql());
+        assertEquals("ALTER TABLE TABLE_NAME MODIFY ( NAME INTEGER )", SqlGeneratorFactory.getInstance().generateSql(change.generateStatements(database)[0], database)[0].toSql());
     }
 //
 //    @Override
