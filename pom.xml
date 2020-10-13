@@ -4,7 +4,7 @@
     <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-modify-column</artifactId>
     <name>modifyColumn change from Liquibase 1.9</name>
-    <version>4.1.1</version>
+    <version>4.1.2-SNAPSHOT</version>
     <description>Prior to Liquibase 2.0, there was a modifyColumn change that was difficult to maintain because it was too broad. It has been moved to this separate library, but use of it is not recommended</description>
     <url>http://www.liquibase.org</url>
 
@@ -27,7 +27,7 @@
     <scm>
 		<connection>scm:git:http://github.com/liquibase/liquibase-modify-column.git</connection>
 		<url>https://github.com/liquibase/liquibase-modify-column</url>
-      <tag>liquibase-modify-column-4.1.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <developers>
