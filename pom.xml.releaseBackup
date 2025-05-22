@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-parent-pom</artifactId>
+        <version>0.5.8</version> 
+    </parent>
+
+    <groupId>org.liquibase.ext</groupId>
+    <artifactId>liquibase-modify-column</artifactId>
+    <name>modifyColumn change from Liquibase 1.9</name>
+    <version>4.32.0-SNAPSHOT</version>
+    <description>Prior to Liquibase 2.0, there was a modifyColumn change that was difficult to maintain because it was too broad. It has been moved to this separate library, but use of it is not recommended</description>
+    <url>http://www.liquibase.org</url>
+
+	<scm>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+		<url>https://github.com/liquibase/liquibase-modify-column.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+    <properties>
+        <liquibase.version>4.32.0</liquibase.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+			<version>4.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymockclassextension</artifactId>
+            <scope>test</scope>
+            <version>3.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit4</artifactId>
+                        <version>3.5.2</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
